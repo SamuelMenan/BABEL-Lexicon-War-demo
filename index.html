@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Space Typing Wars</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- Three.js canvas injected here -->
+      <canvas id="game-canvas"></canvas>
+
+      <!-- HUD overlay -->
+      <div id="hud" class="hidden">
+        <div id="hud-top">
+          <div id="hud-score">SCORE <span id="score-val">0</span></div>
+          <div id="hud-wpm">WPM <span id="wpm-val">0</span></div>
+          <div id="hud-lives">LIVES <span id="lives-val">3</span></div>
+        </div>
+        <div id="hud-progress-bar-wrap" class="hidden">
+          <div id="hud-progress-label">RACE PROGRESS</div>
+          <div id="hud-progress-track">
+            <div id="hud-player-marker">▶</div>
+            <div id="hud-enemy-marker">◀</div>
+          </div>
+        </div>
+        <div id="hud-word-display" class="hidden">
+          <div id="current-word-prompt"></div>
+        </div>
+      </div>
+
+      <!-- Typing input -->
+      <div id="typing-area" class="hidden">
+        <input
+          id="typing-input"
+          type="text"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          placeholder="Type here…"
+        />
+      </div>
+
+      <!-- Menu screen -->
+      <div id="menu-screen">
+        <div id="menu-bg-stars"></div>
+        <div id="menu-content">
+          <div id="menu-logo">
+            <div id="logo-text">SPACE<br/>TYPING<br/>WARS</div>
+            <div id="logo-sub">Master the keyboard. Conquer the galaxy.</div>
+          </div>
+          <div id="menu-buttons">
+            <button class="menu-btn" id="btn-race" data-mode="race">
+              <span class="btn-icon">⚡</span>
+              <span class="btn-label">TYPING RACE</span>
+              <span class="btn-desc">Speed across the cosmos</span>
+            </button>
+            <button class="menu-btn" id="btn-battle" data-mode="battle">
+              <span class="btn-icon">🔫</span>
+              <span class="btn-label">BATTLE MODE</span>
+              <span class="btn-desc">Destroy enemy fleets</span>
+            </button>
+          </div>
+          <div id="menu-footer">USE KEYBOARD · NO MOUSE NEEDED</div>
+        </div>
+      </div>
+
+      <!-- Game Over / Win screen -->
+      <div id="end-screen" class="hidden">
+        <div id="end-content">
+          <div id="end-title"></div>
+          <div id="end-stats"></div>
+          <button class="menu-btn" id="btn-restart">↩ PLAY AGAIN</button>
+          <button class="menu-btn secondary" id="btn-menu">⌂ MAIN MENU</button>
+        </div>
+      </div>
+
+      <!-- Countdown -->
+      <div id="countdown" class="hidden"></div>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
